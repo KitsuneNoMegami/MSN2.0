@@ -2,9 +2,14 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>MSN2.0</title>
+
+    <meta content="MSN2.0" name="description" />
+
+    <!-- Setting character encoding and viewport size. Do not remove. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
 
@@ -13,10 +18,62 @@
 
     <!-- JavaScript: -->
     <script src="/js/base.js"></script>
+
 </head>
 
 <body>
+    <a href="#content" id="skip-to-content-link">Skip to content</a>
 
+    <div class="layout">
+        <!-- =============================================== -->
+        <!-- HEADER -->
+        <!-- =============================================== -->
+        <header>
+            <div id="sticker">
+                <img src="/images/title.gif" name="websiteTitle" align="left">
+            </div>
+            <div class="header-image">
+                <img src="/images/logout.png">
+            </div>
+        </header>
+        <main id="content">
+
+            <div class="main-title">Chatbox</div>
+            <!-- =============================================== -->
+            <!-- MAIN CONTENT -->
+            <!-- =============================================== -->
+            <section>
+
+            </section>
+
+        </main>
+
+        <!-- =============================================== -->
+        <!-- LEFT SIDEBAR -->
+        <!-- =============================================== -->
+
+        <aside class="left-sidebar">
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Contacts</div>
+            </div>
+
+            <marquee>
+                <img src="/images/papillon.png" alt="papillon" width=40%>
+            </marquee>
+        </aside>
+
+        <aside class="right-sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Météo</div>
+                <p>/*Url requete : https://api.open-meteo.com/v1/forecast?latitude=48.4196&longitude=-71.0637&hourly=temperature_2m,weather_code&timezone=auto&forecast_days=1 */</p>
+            </div>
+    </div>
+    </aside>
+
+    </div>
+
+    <script src="/js/drag.js"></script>
 </body>
 
 </html>
