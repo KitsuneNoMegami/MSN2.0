@@ -109,7 +109,7 @@ a:focus {
     width: 90%;
     display: grid;
     grid-gap: var(--margin);
-    grid-template: "header header header" auto "leftSidebar main rightSidebar" auto "footer footer footer" auto / var(--sidebar-width) auto var(--sidebar-width);
+    grid-template: "header header header" auto "leftSidebar main rightSidebar" auto / var(--sidebar-width) auto var(--sidebar-width);
 }
 
 main {
