@@ -1,8 +1,8 @@
 @font-face {
     font-family: "Pixelated Elegance";
     src:
-        url("/css/fonts/Elevatia.ttf") format("truetype"),
-        url("/css/fonts/ElevatiaItalic.ttf") format("truetype");
+        url("fonts/Elevatia.ttf") format("truetype"),
+        url("fonts/ElevatiaItalic.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -42,8 +42,8 @@
     --sidebar-width: 300px;
 
     /* cursor */
-    --cursor: url("/images/pinkcursor.cur"), auto;
-    --pointer: url("/images/cursorselect.cur"), auto;
+    --cursor: url("../images/pinkcursor.cur"), auto;
+    --pointer: url("../images/cursorselect.cur"), auto;
 }
 
 
@@ -66,10 +66,12 @@ body {
     color: var(--text-color);
     font-family: var(--font);
     line-height: 1.2;
-    background-image: url("/images/background.jpg");
+    background-image: url("../images/background.jpg");
     background-size: cover;
+    background-attachment: fixed;
     cursor: var(--cursor);
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 ::selection {
@@ -107,9 +109,10 @@ a:focus {
 
 .layout {
     width: 90%;
+    max-width: 1400px;
     display: grid;
     grid-gap: var(--margin);
-    grid-template: "header header header" auto "leftSidebar main rightSidebar" auto / var(--sidebar-width) auto var(--sidebar-width);
+    grid-template: "header header header" auto "leftSidebar main rightSidebar" auto "footer footer footer" auto / minmax(180px, var(--sidebar-width)) minmax(0, auto) minmax(180px, var(--sidebar-width));
 }
 
 main {
@@ -119,6 +122,7 @@ main {
     background: var(--content-background-color);
     border: var(--border);
     border-radius: var(--round-borders);
+    box-shadow: 0 4px 12px rgba(67, 11, 110, 0.18);
     position: relative;
     padding: 20px;
     background-color: #fff;
@@ -131,7 +135,7 @@ main::before {
     left: 0;
     width: 100%;
     height: 30px;
-    background: url('/images/window_frame1.jpg') no-repeat center;
+    background: url('../images/window_frame1.jpg') no-repeat center;
     background-size: 100% 100%;
 }
 
@@ -210,6 +214,11 @@ header {
     transform: rotate(0deg);
 }
 
+#sticker img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* -------------------------------------------------------- */
 /*?                    SIDEBARS                             */
 /* -------------------------------------------------------- */
@@ -219,7 +228,7 @@ aside {
     overflow: hidden;
     background: transparent;
     padding: var(--padding);
-    color: var(--sidebar-text-color);
+    color: var(--text-color);
 }
 
 aside>div {
@@ -233,6 +242,7 @@ aside>div {
     background-color: #fff;
     border:var(--border);
     border-radius: var(--round-borders);
+    box-shadow: 0 4px 12px rgba(67, 11, 110, 0.18);
 }
 
 /* Creating the top image border */
@@ -243,7 +253,7 @@ aside>div {
     left: 0;
     width: 100%;
     height: 25px;
-    background: url('/images/window_frame2.png') no-repeat center;
+    background: url('../images/window_frame2.png') no-repeat center;
     background-size: 100% 100%;
 }
 
@@ -251,7 +261,21 @@ aside>div {
     font-weight: bold;
     font-size: 1.2em;
     font-family: var(--heading-font);
+    color: var(--sidebar-text-color);
     left: 10%;
+}
+
+/* Links and lists inside the white sidebar cards need a color that
+   actually shows up on white -- the cream --link-color only works on
+   the colored title band, not the card body. */
+.sidebar-section a,
+.sidebar-section a:visited {
+    color: var(--border-color);
+}
+
+.sidebar-section a:hover,
+.sidebar-section a:focus {
+    color: var(--text-color);
 }
 
 .sidebar-section>.sidebar-title {
@@ -337,12 +361,12 @@ main {
 
 main a,
 main a:visited {
-    color: var(--link-color);
+    color: var(--border-color);
 }
 
 main a:hover,
 main a:focus {
-    color: var(--link-color-hover);
+    color: var(--text-color);
     text-decoration-style: wavy;
 }
 
@@ -492,19 +516,44 @@ main h6 {
 /*? MOBILE RESPONSIVE */
 /* -------------------------------------------------------- */
 
-/* CSS Code for devices < 800px */
-@media (max-width: 800px) {
-    body {
-        font-size: 9px;
+/* CSS Code for tablets: 801px to 1100px */
+@media (max-width: 1100px) {
+    :root {
+        --sidebar-width: 220px;
+        --padding: 14px;
     }
 
     .layout {
-        grid-template: "header" auto "leftSidebar" auto "main" auto/1fr;
+        width: 96%;
+    }
+}
+
+/* CSS Code for devices < 800px */
+@media (max-width: 800px) {
+    body {
+        font-size: 13px;
+        padding: calc(var(--margin) / 2);
+    }
+
+    .layout {
+        width: 100%;
+        grid-gap: 20px;
+        grid-template: "header" auto "leftSidebar" auto "main" auto "rightSidebar" auto/1fr;
         /* Confused by the grid? Check out my tutorial: https://petrapixel.neocities.org/coding/positioning-tutorial#grid */
     }
 
-    .right-sidebar {
-        display: none;
+    #sticker {
+        position: static;
+        display: flex;
+        justify-content: center;
+        transform: none;
+        margin: 0 auto 10px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        margin-right: 0;
     }
 
     marquee {
@@ -513,5 +562,16 @@ main h6 {
 
     #skip-to-content-link {
         font-size: 1rem;
+    }
+}
+
+/* CSS Code for very small phones: < 400px */
+@media (max-width: 400px) {
+    :root {
+        --padding: 10px;
+    }
+
+    body {
+        font-size: 12px;
     }
 }
