@@ -29,16 +29,25 @@ input {
     border-radius: 6px;
 }
 
-.action-button {
+button {
     padding: 10px 18px;
     border-radius: 6px;
+}
+
+.action-button-connexion {
     background: #d1e8ff;
 }
 
-.action-button:hover {
+.action-button-inscription {
+    background: #ffd1e8;
+}
+
+.button:hover {
     background: #fff;
     transform: scale(1.06)
 }
+
+
 
 .page-link {
     margin-top: 18px;
