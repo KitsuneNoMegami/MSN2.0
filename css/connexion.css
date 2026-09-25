@@ -42,7 +42,7 @@ button {
     background: #ffd1e8;
 }
 
-.button:hover {
+button:hover {
     background: #fff;
     transform: scale(1.06)
 }
