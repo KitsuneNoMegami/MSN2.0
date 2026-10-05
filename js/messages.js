@@ -1,5 +1,5 @@
-const form = document.getElementById("form");
-const input = document.getElementById("input");
+const form = document.getElementById("chat-form");
+const input = document.getElementById("text-box");
 const messages = document.getElementById("messages");
 
 form.addEventListener("submit", (event) => {
