@@ -46,7 +46,13 @@
             <!-- MAIN CONTENT -->
             <!-- =============================================== -->
             <section>
-
+                <div id="chat">
+                    <div id="messages"></div>
+                    <form>
+                        <input id="text-box" type="textbox" placeholder="Tapez votre message">
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
             </section>
 
         </main>
@@ -57,7 +63,7 @@
 
         <aside class="left-sidebar">
 
-            <div class="sidebar-section">logout
+            <div class="sidebar-section">
                 <div class="sidebar-title">Contacts</div>
             </div>
 
@@ -66,17 +72,10 @@
             </marquee>
         </aside>
 
-        <aside class="right-sidebar">
-            <div class="sidebar-section">
-                <div class="sidebar-title">Météo</div>
-                <p>/*Url requete : https://api.open-meteo.com/v1/forecast?latitude=48.4196&longitude=-71.0637&hourly=temperature_2m,weather_code&timezone=auto&forecast_days=1 */</p>
-            </div>
-    </div>
-    </aside>
-
     </div>
 
     <script src="../js/drag.js"></script>
+    <script src="../js/messages.js"></script>
 </body>
 
 </html>
