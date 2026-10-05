@@ -11,14 +11,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="../images/favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="./images/favicon.ico" rel="icon" type="image/x-icon" />
 
     <!-- CSS: -->
-    <link href="../css/base.css" rel="stylesheet" />
-    <link href="../css/chat.css" rel="stylesheet" />
+    <link href="./css/base.css" rel="stylesheet" />
+    <link href="./css/chat.css" rel="stylesheet" />
 
     <!-- JavaScript: -->
-    <script src="../js/base.js"></script>
+    <script src="./js/base.js"></script>
 
 </head>
 
@@ -31,11 +31,11 @@
         <!-- =============================================== -->
         <header>
             <div id="sticker">
-                <img src="../images/title.gif" name="websiteTitle" align="left">
+                <img src="./images/title.gif" name="websiteTitle" align="left">
             </div>
             <div class="header-image">
                 <a id="logout-button" href="connexion.html" aria-label="Se déconnecter">
-                    <img src="../images/logout.png" alt="Se déconnecter">
+                    <img src="./images/logout.png" alt="Se déconnecter">
                 </a>
             </div>
         </header>
@@ -48,8 +48,9 @@
             <section>
                 <div id="chat">
                     <div id="messages"></div>
-                    <form>
-                        <input id="text-box" type="textbox" placeholder="Tapez votre message">
+                    <form id="chat-form">
+                        <input id="text-box" type="text" placeholder="Tapez votre message" autocomplete="off"
+                            aria-label="Message">
                         <button type="submit">Send</button>
                     </form>
                 </div>
@@ -68,14 +69,14 @@
             </div>
 
             <marquee>
-                <img src="../images/papillon.png" alt="papillon" width=40%>
+                <img src="./images/papillon.png" alt="papillon" width=40%>
             </marquee>
         </aside>
 
     </div>
 
-    <script src="../js/drag.js"></script>
-    <script src="../js/messages.js"></script>
+    <script src="./js/drag.js"></script>
+    <script src="./js/messages.js"></script>
 </body>
 
 </html>
