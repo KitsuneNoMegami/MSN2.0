@@ -1,14 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-
-<head>
-
+  <head>
     <title>MSN2.0</title>
 
     <meta content="MSN2.0" name="description" />
 
     <!-- Setting character encoding and viewport size. Do not remove. -->
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link href="./images/favicon.ico" rel="icon" type="image/x-icon" />
@@ -20,63 +18,71 @@
     <!-- JavaScript: -->
     <script src="./js/base.js"></script>
 
-</head>
+    <!--Verification connection a supabase-->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./js/supabase.js"></script>
+    <script type="module" src="./js/auth.js"></script>
+  </head>
 
-<body>
+  <body>
     <a href="#content" id="skip-to-content-link">Skip to content</a>
 
     <div class="layout">
+      <!-- =============================================== -->
+      <!-- HEADER -->
+      <!-- =============================================== -->
+      <header>
+        <div id="sticker">
+          <img src="./images/title.gif" name="websiteTitle" align="left" />
+        </div>
+        <div class="header-image">
+          <a
+            id="logout-button"
+            href="connexion.html"
+            aria-label="Se déconnecter"
+          >
+            <img src="./images/logout.png" alt="Se déconnecter" />
+          </a>
+        </div>
+      </header>
+      <main id="content">
+        <div class="main-title">Chatbox</div>
         <!-- =============================================== -->
-        <!-- HEADER -->
+        <!-- MAIN CONTENT -->
         <!-- =============================================== -->
-        <header>
-            <div id="sticker">
-                <img src="./images/title.gif" name="websiteTitle" align="left">
-            </div>
-            <div class="header-image">
-                <a id="logout-button" href="connexion.html" aria-label="Se déconnecter">
-                    <img src="./images/logout.png" alt="Se déconnecter">
-                </a>
-            </div>
-        </header>
-        <main id="content">
+        <section>
+          <div id="chat">
+            <div id="messages"></div>
+            <form id="chat-form">
+              <input
+                id="text-box"
+                type="text"
+                placeholder="Tapez votre message"
+                autocomplete="off"
+                aria-label="Message"
+              />
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </section>
+      </main>
 
-            <div class="main-title">Chatbox</div>
-            <!-- =============================================== -->
-            <!-- MAIN CONTENT -->
-            <!-- =============================================== -->
-            <section>
-                <div id="chat">
-                    <div id="messages"></div>
-                    <form id="chat-form">
-                        <input id="text-box" type="text" placeholder="Tapez votre message" autocomplete="off"
-                            aria-label="Message">
-                        <button type="submit">Send</button>
-                    </form>
-                </div>
-            </section>
+      <!-- =============================================== -->
+      <!-- LEFT SIDEBAR -->
+      <!-- =============================================== -->
 
-        </main>
+      <aside class="left-sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-title">Contacts</div>
+        </div>
 
-        <!-- =============================================== -->
-        <!-- LEFT SIDEBAR -->
-        <!-- =============================================== -->
-
-        <aside class="left-sidebar">
-
-            <div class="sidebar-section">
-                <div class="sidebar-title">Contacts</div>
-            </div>
-
-            <marquee>
-                <img src="./images/papillon.png" alt="papillon" width=40%>
-            </marquee>
-        </aside>
-
+        <marquee>
+          <img src="./images/papillon.png" alt="papillon" width="40%" />
+        </marquee>
+      </aside>
     </div>
 
     <script src="./js/drag.js"></script>
     <script src="./js/messages.js"></script>
-</body>
-
+  </body>
 </html>
