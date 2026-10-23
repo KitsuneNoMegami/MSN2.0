@@ -1,4 +1,4 @@
-@import "./css/base.css";
+@import "base.css";
 
 /* Chaîne de hauteur : chaque parent doit en avoir une */
 body {
