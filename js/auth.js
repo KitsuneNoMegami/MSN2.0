@@ -8,5 +8,5 @@ document
   .addEventListener("click", async (event) => {
     event.preventDefault();
     await client.auth.signOut();
-    window.location.replace("connexion.html");
+    window.location.replace("./pages/connexion.html");
   });
