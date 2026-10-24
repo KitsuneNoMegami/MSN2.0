@@ -1,0 +1,79 @@
+.contact-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;                      /* espace entre recherche et "+" */
+}
+
+#form-contact-search {
+    display: flex;
+    flex: 1;
+    min-width: 0;                   /* évite le débordement */
+    margin: 0;
+}
+
+#contact-search {
+    flex: 1;
+    min-width: 0;
+    height: 30px;
+    padding: 0 8px;
+    font: inherit;
+    color: var(--text-color);
+    background: #fff;
+    border: 1px solid #7f9db9;      /* bordure de champ XP */
+    border-right: 0;
+    border-radius: 4px 0 0 4px;
+}
+
+.icon-btn {
+    flex: none;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    font: inherit;
+    line-height: 1;
+    cursor: var(--pointer);
+}
+
+#search-button {
+    background: linear-gradient(#fdfeff, #d6e5f9 50%, #b5cdee);
+    border: 1px solid #7f9db9;
+    border-radius: 0 4px 4px 0;
+}
+
+#add-contact {
+    position: relative;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .35);
+    background: linear-gradient(#b4e69a, #55b533 55%, #3f9c20);
+    border: 1px solid #2d7a14;
+    border-radius: 4px;
+}
+
+/* petit séparateur vertical entre les deux groupes */
+#add_contact::before {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 5px;
+    bottom: 5px;
+    width: 1px;
+    background: #b8c9e3;
+}
+
+.icon-btn:hover   { filter: brightness(1.08); }
+.icon-btn:active  { filter: brightness(.92); transform: translateY(1px); }
+
+#contact-search:focus-visible,
+.icon-btn:focus-visible {
+    outline: 2px solid #ff9d00;     /* orange de focus XP */
+    outline-offset: 1px;
+}
+
+@media (max-width: 800px) {
+    #contact-search, .icon-btn { height: 40px; }
+    .icon-btn { width: 40px; }
+}
