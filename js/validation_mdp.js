@@ -40,3 +40,6 @@ document.getElementById("confirmmdp")
         .textContent = "";
     }
 });
+
+document.getElementById("mdp").addEventListener("input", updateAlert);
+document.getElementById("confirmmdp").addEventListener("input", updateAlert);
