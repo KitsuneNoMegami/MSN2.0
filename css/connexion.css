@@ -44,12 +44,10 @@ button {
     background: #ffd1e8;
 }
 
-button:hover {
+.action-button-connexion:hover,
+.action-button-inscription:hover {
     background: #fff;
-    transform: scale(1.06)
 }
-
-
 
 .page-link {
     margin-top: 18px;
