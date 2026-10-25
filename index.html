@@ -14,6 +14,7 @@
     <!-- CSS: -->
     <link href="./css/base.css" rel="stylesheet" />
     <link href="./css/chat.css" rel="stylesheet" />
+    <link href="./css/contacts.css" rel="stylesheet" />
 
     <!-- JavaScript: -->
     <script src="./js/base.js"></script>
@@ -36,7 +37,7 @@
           <img src="./images/title.gif" name="websiteTitle" align="left" />
         </div>
         <div class="header-image">
-          <a id="logout_button" href="./pages/connexion.html" aria-label="Se déconnecter">
+          <a id="logout-button" href="./pages/connexion.html" aria-label="Se déconnecter">
             <img src="./images/logout.png" alt="Se déconnecter" />
           </a>
         </div>
@@ -70,6 +71,23 @@
       <aside class="left-sidebar">
         <div class="sidebar-section">
           <div class="sidebar-title">Contacts</div>
+        <div class="contacts-content">
+          <form id="contact-form">
+            <label for="contact-email">Ajouter un contact</label>
+            <div class="contact-form-row">
+              <input
+                id="contact-email"
+                type="email"
+                placeholder="adresse e-mail"
+                autocomplete="email"
+                required
+              />
+              <button type="submit">+</button>
+            </div>
+          </form>
+          <p id="contacts-alert" role="status" aria-live="polite"></p>
+          <ul id="contacts-list"></ul>
+        </div>
         </div>
 
         <marquee>
@@ -80,5 +98,6 @@
 
     <script src="./js/drag.js"></script>
     <script src="./js/messages.js"></script>
+    <script type="module" src="./js/contacts.js"></script>
   </body>
 </html>
