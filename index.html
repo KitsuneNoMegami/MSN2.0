@@ -14,7 +14,7 @@
     <!-- CSS: -->
     <link href="./css/base.css" rel="stylesheet" />
     <link href="./css/chat.css" rel="stylesheet" />
-    <link href="./css/contacts.css" rel="stylesheet" />
+    <link href="./css/channels.css" rel="stylesheet" />
 
     <!-- JavaScript: -->
     <script src="./js/base.js"></script>
@@ -70,23 +70,24 @@
 
       <aside class="left-sidebar">
         <div class="sidebar-section">
-          <div class="sidebar-title">Contacts</div>
-        <div class="contacts-content">
-          <form id="contact-form">
-            <label for="contact-email">Ajouter un contact</label>
-            <div class="contact-form-row">
+          <div class="sidebar-title">Channels</div>
+        <div class="channels-content">
+          <form id="channel-form">
+            <label for="channel-name">Ajouter un channel</label>
+            <div class="channel-form-row">
               <input
-                id="contact-email"
-                type="email"
-                placeholder="adresse e-mail"
-                autocomplete="email"
+                id="channel-name"
+                type="text"
+                placeholder="nom du channel"
+                autocomplete="off"
+                maxlength="100"
                 required
               />
               <button type="submit">+</button>
             </div>
           </form>
-          <p id="contacts-alert" role="status" aria-live="polite"></p>
-          <ul id="contacts-list"></ul>
+          <p id="channels-alert" role="status" aria-live="polite"></p>
+          <ul id="channels-list"></ul>
         </div>
         </div>
 
@@ -98,6 +99,6 @@
 
     <script src="./js/drag.js"></script>
     <script src="./js/messages.js"></script>
-    <script type="module" src="./js/contacts.js"></script>
+    <script type="module" src="./js/channels.js"></script>
   </body>
 </html>
