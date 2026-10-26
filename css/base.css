@@ -43,7 +43,7 @@
 
     /* cursor */
     --cursor: url("../images/pinkcursor.cur"), auto;
-    --pointer: url("../images/cursorselect.cur"), auto;
+    --pointer: url("../images/cursorselect.cur"), pointer;
 }
 
 
@@ -94,6 +94,16 @@ a {
 a,
 a:visited {
     color: var(--link-color);
+}
+
+a[href],
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+[role="button"],
+summary {
+    cursor: var(--pointer);
 }
 
 a:hover,
@@ -346,8 +356,40 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    cursor: var(--pointer);
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    transition:
+        background-color 120ms ease,
+        box-shadow 120ms ease,
+        transform 120ms ease;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 0 rgba(67, 11, 110, 0.22);
+}
+
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+button:focus-visible,
+input[type="button"]:focus-visible,
+input[type="reset"]:focus-visible,
+input[type="submit"]:focus-visible,
+a[href]:focus-visible,
+[role="button"]:focus-visible {
+    outline: 2px solid var(--border-color);
+    outline-offset: 2px;
 }
 
 

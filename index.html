@@ -14,6 +14,7 @@
     <!-- CSS: -->
     <link href="./css/base.css" rel="stylesheet" />
     <link href="./css/chat.css" rel="stylesheet" />
+    <link href="./css/channels.css" rel="stylesheet" />
 
     <!-- JavaScript: -->
     <script src="./js/base.js"></script>
@@ -36,7 +37,7 @@
           <img src="./images/title.gif" name="websiteTitle" align="left" />
         </div>
         <div class="header-image">
-          <a id="logout_button" href="./pages/connexion.html" aria-label="Se déconnecter">
+          <a id="logout-button" href="./pages/connexion.html" aria-label="Se déconnecter">
             <img src="./images/logout.png" alt="Se déconnecter" />
           </a>
         </div>
@@ -69,7 +70,25 @@
 
       <aside class="left-sidebar">
         <div class="sidebar-section">
-          <div class="sidebar-title">Contacts</div>
+          <div class="sidebar-title">Channels</div>
+        <div class="channels-content">
+          <form id="channel-form">
+            <label for="channel-name">Ajouter un channel</label>
+            <div class="channel-form-row">
+              <input
+                id="channel-name"
+                type="text"
+                placeholder="nom du channel"
+                autocomplete="off"
+                maxlength="100"
+                required
+              />
+              <button type="submit">+</button>
+            </div>
+          </form>
+          <p id="channels-alert" role="status" aria-live="polite"></p>
+          <ul id="channels-list"></ul>
+        </div>
         </div>
 
         <marquee>
@@ -80,5 +99,6 @@
 
     <script src="./js/drag.js"></script>
     <script src="./js/messages.js"></script>
+    <script type="module" src="./js/channels.js"></script>
   </body>
 </html>
