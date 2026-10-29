@@ -1,0 +1,82 @@
+.channels-content {
+    padding-top: 10px;
+}
+
+.channels-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.channel-form-row {
+    display: flex;
+    gap: 4px;
+}
+
+.channel-form-row input {
+    min-width: 0;
+    width: 100%;
+    padding: 5px;
+}
+
+.channel-form-row button {
+    min-width: 28px;
+    padding: 2px 8px;
+}
+
+#channels-alert {
+    min-height: 1.2em;
+    margin: 8px 0;
+    font-size: 0.85em;
+}
+
+.channels-alert-error {
+    color: #a40000;
+}
+
+#channels-list {
+    max-height: 200px;
+    overflow-y: auto;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#channels-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    padding: 4px 0;
+    overflow-wrap: anywhere;
+}
+
+.channels-empty {
+    opacity: 0.75;
+}
+
+.channel-remove {
+    flex: 0 0 auto;
+    padding: 0 5px;
+    border: 0;
+    background: transparent;
+    color: var(--border-color);
+}
+
+.channel-select {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    padding: 3px 5px;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.channel-select-active {
+    background: var(--border-color);
+    color: white;
+}
