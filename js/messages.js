@@ -1,26 +1,46 @@
+//? Recuperation des informations necessaires
+//* Element html
 const form = document.getElementById("chat-form");
 const input = document.getElementById("text-box");
 const messages = document.getElementById("messages");
 const chatTitle = document.querySelector(".main-title");
 
+//* Informations annexes pour l'envoie de messages
+let channel_id = "";
+
 window.addEventListener("channel-selected", (event) => {
-    const channel = event.detail;
-    chatTitle.textContent = `# ${channel.name}`;
-    messages.replaceChildren();
+	const channel = event.detail;
+	channel_id = channel.id;
+	chatTitle.textContent = `# ${channel.name}`;
+	messages.replaceChildren();
 });
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();               // empêche le rechargement de la page
+form.addEventListener("submit", async (event) => {
+	event.preventDefault();
 
-    const text = input.value.trim();
-    if (text === "") return;              // ignore les messages vides
+	const {
+		data: { user },
+	} = await client.auth.getUser();
 
-    const message = document.createElement("div");
-    message.className = "message";
-    message.textContent = text;           // textContent, pas innerHTML (voir audit)
-    messages.appendChild(message);
+	if (!user) {
+		setChannelsAlert("Votre session a expiré.", true);
+		return;
+	}
 
-    input.value = "";
-    input.focus();
-    messages.scrollTop = messages.scrollHeight;  // descend tout en bas
+	//? ignore les messages vides
+	const text = input.value.trim();
+	if (text === "") return;
+
+	const { error: insertError } = await client.from("messages").insert({
+		channel_id: channel_id,
+		user_id: user.id,
+		username: user.email,
+		content: text,
+		created_at: new Date().toISOString(),
+	});
+
+	input.value = "";
+	input.focus();
+	// descend tout en bas
+	messages.scrollTop = messages.scrollHeight;
 });
