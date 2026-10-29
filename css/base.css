@@ -219,7 +219,7 @@ header {
     position: absolute;
     z-index: 999;
     cursor: move;
-    right: 45%;
+    left: 45%;
     top:5%;
     transform: rotate(0deg);
 }
