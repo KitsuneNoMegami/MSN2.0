@@ -78,7 +78,7 @@ function renderMessages(list) {
 	messages.replaceChildren();
 
 	if (list.length === 0) {
-		const emptyItem = document.createElement("li");
+		const emptyItem = document.createElement("p");
 		emptyItem.textContent = "Aucun message";
 		emptyItem.className = "messages-empty";
 		messages.appendChild(emptyItem);
@@ -86,7 +86,7 @@ function renderMessages(list) {
 	}
 
 	list.forEach((message) => {
-		const item = document.createElement("li");
+		const item = document.createElement("p");
 		const sender = document.createElement("strong");
 		const content = document.createElement("span");
 
