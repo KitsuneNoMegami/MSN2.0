@@ -58,3 +58,9 @@ main section {
 .right{
     margin-left: auto;
 }
+
+.right, .left{
+    background-color: #e2d9d9;
+    color: black;
+    font-weight: 200;
+}
