@@ -1,103 +1,115 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <title>MSN2.0</title>
+	<head>
+		<title>MSN2.0</title>
+		<meta content="MSN2.0" name="description" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="./images/favicon.ico" rel="icon" type="image/x-icon" />
 
-    <meta content="MSN2.0" name="description" />
+		<!-- Feuilles de style : -->
+		<link href="./css/base.css" rel="stylesheet" />
+		<link href="./css/chat.css" rel="stylesheet" />
+		<link href="./css/channels.css" rel="stylesheet" />
 
-    <!-- Setting character encoding and viewport size. Do not remove. -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- ? Cache toute la page tant que auth.js n'a pas confirmé la connexion -->
+		<!-- ! Ce style doit rester dans le <head> et avant les scripts, sinon la page s'affiche un instant avant la redirection -->
+		<style>
+			body {
+				visibility: hidden;
+			}
+		</style>
 
-    <link href="./images/favicon.ico" rel="icon" type="image/x-icon" />
+		<!-- Scripts : -->
+		<!-- ? Charge la bibliothèque Supabase -->
+		<!-- ! Ordre important : bibliothèque, puis supabase.js, puis connexion.js -->
+		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+		<script src="./js/supabase.js"></script>
+		<!-- * type="module" nécessaire pour le await de auth.js -->
+		<script type="module" src="./js/auth.js"></script>
+	</head>
 
-    <!-- CSS: -->
-    <link href="./css/base.css" rel="stylesheet" />
-    <link href="./css/chat.css" rel="stylesheet" />
-    <link href="./css/channels.css" rel="stylesheet" />
+	<body>
+		<!-- ? Lien d'accessibilité : permet de sauter directement au contenu au clavier -->
+		<a href="#content" id="skip-to-content-link">Skip to content</a>
 
-    <!-- JavaScript: -->
+		<div class="layout">
+			<!-- ? HEADER : logo déplaçable (#sticker) + bouton de déconnexion -->
+			<header>
+				<div id="sticker">
+					<img src="./images/title.gif" name="websiteTitle" align="left" />
+				</div>
+				<div class="header-image">
+					<a id="logout-button" aria-label="Se déconnecter">
+						<img src="./images/logout.png" alt="Se déconnecter" />
+					</a>
+				</div>
+			</header>
 
-    <!--Verification connection a supabase-->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="./js/supabase.js"></script>
-    <script type="module" src="./js/auth.js"></script>
-  </head>
+			<!-- ? MAIN : la boîte de chat -->
+			<main id="content">
+				<div class="main-title">Chatbox</div>
+				<section>
+					<div id="chat">
+						<!-- * #messages reçoit les messages créés par messages.js -->
+						<div id="messages"></div>
+						<form id="chat-form">
+							<input id="text-box" type="text" placeholder="Tapez votre message" autocomplete="off" aria-label="Message" />
+							<button type="submit">Send</button>
+						</form>
+					</div>
+				</section>
+			</main>
 
-  <body>
-    <a href="#content" id="skip-to-content-link">Skip to content</a>
+			<!-- ? SIDEBAR GAUCHE : liste des channels et formulaire d'ajout -->
+			<aside class="left-sidebar">
+				<div class="sidebar-section">
+					<div class="sidebar-title">Channels</div>
+					<div class="channels-content">
+						<form id="channel-form">
+							<label for="channel-name">Ajouter un channel</label>
+							<div class="channel-form-row">
+								<!-- * maxlength + required : validation basique faite par le navigateur -->
+								<input id="channel-name" type="text" placeholder="nom du channel" autocomplete="off" maxlength="100" required />
+								<button type="submit">+</button>
+							</div>
+						</form>
+						<!-- *  les lecteurs d'écran annoncent les changements de ce message -->
+						<p id="channels-alert" role="status" aria-live="polite"></p>
+						<!-- * La liste est remplie par channels.js  -->
+						<ul id="channels-list"></ul>
+					</div>
+				</div>
 
-    <div class="layout">
-      <!-- =============================================== -->
-      <!-- HEADER -->
-      <!-- =============================================== -->
-      <header>
-        <div id="sticker">
-          <img src="./images/title.gif" name="websiteTitle" align="left" />
-        </div>
-        <div class="header-image">
-          <a id="logout-button" href="./pages/connexion.html" aria-label="Se déconnecter">
-            <img src="./images/logout.png" alt="Se déconnecter" />
-          </a>
-        </div>
-      </header>
-      <main id="content">
-        <div class="main-title">Chatbox</div>
-        <!-- =============================================== -->
-        <!-- MAIN CONTENT -->
-        <!-- =============================================== -->
-        <section>
-          <div id="chat">
-            <div id="messages"></div>
-            <form id="chat-form">
-              <input
-                id="text-box"
-                type="text"
-                placeholder="Tapez votre message"
-                autocomplete="off"
-                aria-label="Message"
-              />
-              <button type="submit">Send</button>
-            </form>
-          </div>
-        </section>
-      </main>
+				<marquee scrollamount="8">
+					<img src="./images/papillon.png" alt="papillon" width="40%" />
+					<img src="./images/messenger_icon.png" alt="messenger icon" width="40%" />
+					<img src="./images/rubber_ducky.png" alt="rubber ducky" width="30%" />
+					<img src="./images/computer.gif" alt="computer" width="40%" />
+					<img src="./images/computer_loves_you.gif" alt="your computer loves you" width="70%" />
+					<img src="./images/connexion.gif" alt="signin in" width="40%" />
+					<img src="./images/msnexp.gif" alt="msn" width="50%" />
+					<img src="./images/googol.gif" alt="google" width="50%" />
+					<img src="./images/download.gif" alt="download" width="50%" />
+					<img src="./images/xp.gif" alt="windows xp border" width="50%" />
+					<img src="./images/win95.gif" alt="windows 95" width="50%" />
+					<img src="./images/getwmp7.gif" alt="get windows xp" width="50%" />
+					<img src="./images/cananow.gif" alt="canada" width="50%" />
+					<img src="./images/ie.gif" alt="internet explorer" width="50%" />
+					<img src="./images/getwmp7.gif" alt="get windows xp" width="50%" />
+					<img src="./images/ie.gif" alt="internet explorer" width="50%" />
+					<img src="./images/msnexp.gif" alt="msn" width="50%" />
+					<img src="./images/ie.gif" alt="internet explorer" width="50%" />
+					<img src="./images/msnexp.gif" alt="msn" width="50%" />
+					<img src="./images/ie.gif" alt="internet explorer" width="50%" />
+					<img src="./images/msnexp.gif" alt="msn" width="50%" />
+					<img src="./images/cat.gif" alt="cat" width="40%" />
+				</marquee>
+			</aside>
+		</div>
 
-      <!-- =============================================== -->
-      <!-- LEFT SIDEBAR -->
-      <!-- =============================================== -->
-
-      <aside class="left-sidebar">
-        <div class="sidebar-section">
-          <div class="sidebar-title">Channels</div>
-        <div class="channels-content">
-          <form id="channel-form">
-            <label for="channel-name">Ajouter un channel</label>
-            <div class="channel-form-row">
-              <input
-                id="channel-name"
-                type="text"
-                placeholder="nom du channel"
-                autocomplete="off"
-                maxlength="100"
-                required
-              />
-              <button type="submit">+</button>
-            </div>
-          </form>
-          <p id="channels-alert" role="status" aria-live="polite"></p>
-          <ul id="channels-list"></ul>
-        </div>
-        </div>
-
-        <marquee>
-          <img src="./images/papillon.png" alt="papillon" width="40%" />
-        </marquee>
-      </aside>
-    </div>
-
-    <script src="./js/drag.js"></script>
-    <script src="./js/messages.js"></script>
-    <script type="module" src="./js/channels.js"></script>
-  </body>
+		<script src="./js/drag.js"></script>
+		<script src="./js/messages.js"></script>
+		<script type="module" src="./js/channels.js"></script>
+	</body>
 </html>

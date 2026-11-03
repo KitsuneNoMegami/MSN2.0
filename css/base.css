@@ -1,11 +1,11 @@
 @font-face {
-    font-family: "Pixelated Elegance";
-    src:
-        url("fonts/Elevatia.ttf") format("truetype"),
-        url("fonts/ElevatiaItalic.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+	font-family: "Pixelated Elegance";
+	src:
+		url("fonts/Elevatia.ttf") format("truetype"),
+		url("fonts/ElevatiaItalic.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
 
 /* -------------------------------------------------------- */
@@ -14,86 +14,85 @@
 
 /* Variables are used like this: var(--text-color) */
 :root {
-    /* Background Colors: */
-    --background-color: #f9ebe0;
-    --content-background-color: #f9ebe0;
-    --sidebar-background-color: #e9e4e4;
-    --tag-color: #f9ebe0;
+	/* Background Colors: */
+	--background-color: #f9ebe0;
+	--content-background-color: #f9ebe0;
+	--sidebar-background-color: #e9e4e4;
+	--tag-color: #f9ebe0;
 
-    /* Text Colors: */
-    --text-color: #6e400b;
-    --sidebar-text-color: #f9ebe0;
-    --title-color:#f9ebe0;
-    --link-color: #f9ebe0;
-    --link-color-hover: #f9e0cd;
-    --link-color-active: rgb(255, 221, 191);
-    --border-color: #430b6e;
+	/* Text Colors: */
+	--text-color: #6e400b;
+	--sidebar-text-color: #f9ebe0;
+	--title-color: #f9ebe0;
+	--link-color: #f9ebe0;
+	--link-color-hover: #f9e0cd;
+	--link-color-active: rgb(255, 221, 191);
+	--border-color: #430b6e;
 
-    /* Text: */
-    --font: "Pixelated Elegance", 'Hiragino Kaku Gothic Pro', Osaka, 'MS Gothic', 'Noto Sans CJK JP', TakaoPGothic, sans-serif;
-    --heading-font: "Pixelated Elegance", 'Hiragino Kaku Gothic Pro', Osaka, 'MS Gothic', 'Noto Sans CJK JP', TakaoPGothic, sans-serif;
-    --font-size: 15px;
+	/* Text: */
+	--font: "Pixelated Elegance", "Hiragino Kaku Gothic Pro", Osaka, "MS Gothic", "Noto Sans CJK JP", TakaoPGothic, sans-serif;
+	--heading-font: "Pixelated Elegance", "Hiragino Kaku Gothic Pro", Osaka, "MS Gothic", "Noto Sans CJK JP", TakaoPGothic, sans-serif;
+	--font-size: 15px;
 
-    /* Other Settings: */
-    --margin: 10px;
-    --padding: 20px;
-    --border: 2px solid #0008ff;
-    --round-borders: 10px;
-    --sidebar-width: 300px;
+	/* Other Settings: */
+	--margin: 10px;
+	--padding: 20px;
+	--border: 2px solid #0008ff;
+	--round-borders: 10px;
+	--sidebar-width: 300px;
 
-    /* cursor */
-    --cursor: url("../images/pinkcursor.cur"), auto;
-    --pointer: url("../images/cursorselect.cur"), pointer;
+	/* cursor */
+	--cursor: url("../images/pinkcursor.cur"), auto;
+	--pointer: url("../images/cursorselect.cur"), pointer;
 }
-
 
 /* -------------------------------------------------------- */
 /* BASICS */
 /* -------------------------------------------------------- */
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    min-height: 100vh;
-    font-size: var(--font-size);
-    margin: 0;
-    padding: var(--margin);
-    color: var(--text-color);
-    font-family: var(--font);
-    line-height: 1.2;
-    background-image: url("../images/background.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    cursor: var(--cursor);
-    overflow-x: hidden;
-    overflow-y: auto;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	min-height: 100vh;
+	font-size: var(--font-size);
+	margin: 0;
+	padding: var(--margin);
+	color: var(--text-color);
+	font-family: var(--font);
+	line-height: 1.2;
+	background-image: url("../images/background.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	cursor: var(--cursor);
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 ::selection {
-    /* (Text highlighted by the user) */
-    background: rgba(0, 0, 0, 0.2);
+	/* (Text highlighted by the user) */
+	background: rgba(0, 0, 0, 0.2);
 }
 
 mark {
-    /* Text highlighted by using the <mark> element */
-    text-shadow: 1px 1px 4px var(--link-color);
-    background-color: inherit;
-    color: var(--text-color);
+	/* Text highlighted by using the <mark> element */
+	text-shadow: 1px 1px 4px var(--link-color);
+	background-color: inherit;
+	color: var(--text-color);
 }
 
 /* Links: */
 a {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 a,
 a:visited {
-    color: var(--link-color);
+	color: var(--link-color);
 }
 
 a[href],
@@ -103,62 +102,64 @@ input[type="reset"],
 input[type="submit"],
 [role="button"],
 summary {
-    cursor: var(--pointer);
+	cursor: var(--pointer);
 }
 
 a:hover,
 a:focus {
-    color: var(--link-color-hover);
-    text-decoration: none;
+	color: var(--link-color-hover);
+	text-decoration: none;
 }
 
 /* -------------------------------------------------------- */
 /* LAYOUT */
 /* -------------------------------------------------------- */
 
-
 .layout {
-    width: 90%;
-    max-width: 1400px;
-    display: grid;
-    grid-gap: var(--margin);
-    grid-template: "header header header" auto "leftSidebar main rightSidebar" auto "footer footer footer" auto / minmax(180px, var(--sidebar-width)) minmax(0, auto) minmax(180px, var(--sidebar-width));
+	width: 90%;
+	max-width: 1400px;
+	display: grid;
+	grid-gap: var(--margin);
+	grid-template: "header header header" auto "leftSidebar main rightSidebar" auto "footer footer footer" auto / minmax(180px, var(--sidebar-width)) minmax(0, auto) minmax(
+			180px,
+			var(--sidebar-width)
+		);
 }
 
 main {
-    grid-area: main;
-    overflow-y: auto;
-    padding: var(--padding);
-    background: var(--content-background-color);
-    border: var(--border);
-    border-radius: var(--round-borders);
-    box-shadow: 0 4px 12px rgba(67, 11, 110, 0.18);
-    position: relative;
-    padding: 20px;
-    background-color: #fff;
+	grid-area: main;
+	overflow-y: auto;
+	padding: var(--padding);
+	background: var(--content-background-color);
+	border: var(--border);
+	border-radius: var(--round-borders);
+	box-shadow: 0 4px 12px rgba(67, 11, 110, 0.18);
+	position: relative;
+	padding: 20px;
+	background-color: #fff;
 }
 
 main::before {
-    content: "";
-    position: absolute;
-    top: -1%;
-    left: 0;
-    width: 100%;
-    height: 30px;
-    background: url('../images/window_frame1.jpg') no-repeat center;
-    background-size: 100% 100%;
+	content: "";
+	position: absolute;
+	top: -1%;
+	left: 0;
+	width: 100%;
+	height: 30px;
+	background: url("../images/window_frame1.jpg") no-repeat center;
+	background-size: 100% 100%;
 }
 
 .main-title {
-    font-weight: bold;
-    font-size: 1.2em;
-    font-family: var(--heading-font);
-    color: var(--title-color);
+	font-weight: bold;
+	font-size: 1.2em;
+	font-family: var(--heading-font);
+	color: var(--title-color);
 }
 
-main>.main-title {
-    position: absolute;
-    top: -0.1em;
+main > .main-title {
+	position: absolute;
+	top: -0.1em;
 }
 
 /* -------------------------------------------------------- */
@@ -166,31 +167,31 @@ main>.main-title {
 /* -------------------------------------------------------- */
 
 .image {
-    display: block;
-    width: auto;
-    height: auto;
-    max-width: 100%;
+	display: block;
+	width: auto;
+	height: auto;
+	max-width: 100%;
 }
 
 .full-width-image {
-    display: block;
-    width: 100%;
-    height: auto;
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 .images {
-    display: flex;
-    width: calc(100% + 5px + 5px);
-    margin-left: -5px;
-    margin-right: -5px;
+	display: flex;
+	width: calc(100% + 5px + 5px);
+	margin-left: -5px;
+	margin-right: -5px;
 }
 
 .images img {
-    width: 100%;
-    height: auto;
-    padding: 5px;
-    margin: 0;
-    overflow: hidden;
+	width: 100%;
+	height: auto;
+	padding: 5px;
+	margin: 0;
+	overflow: hidden;
 }
 
 /* -------------------------------------------------------- */
@@ -198,35 +199,35 @@ main>.main-title {
 /* -------------------------------------------------------- */
 
 header {
-    grid-area: header;
-    font-size: 1.2em;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: -5.5%;
-    margin-bottom: 3%;
+	grid-area: header;
+	font-size: 1.2em;
+	display: flex;
+	justify-content: flex-end;
+	margin-right: -5.5%;
+	margin-bottom: 3%;
 }
 
 .header-image {
-    width: clamp(1.5rem, 3vw, 6rem);
+	width: clamp(1.5rem, 3vw, 6rem);
 }
 
 .header-image img {
-    width: 100%;
-    height: auto;
+	width: 100%;
+	height: auto;
 }
 
 #sticker {
-    position: absolute;
-    z-index: 999;
-    cursor: move;
-    left: 45%;
-    top:5%;
-    transform: rotate(0deg);
+	position: absolute;
+	z-index: 999;
+	cursor: move;
+	left: 45%;
+	top: 5%;
+	transform: rotate(0deg);
 }
 
 #sticker img {
-    max-width: 100%;
-    height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 /* -------------------------------------------------------- */
@@ -234,45 +235,45 @@ header {
 /* -------------------------------------------------------- */
 
 aside {
-    grid-area: aside;
-    overflow: hidden;
-    background: transparent;
-    padding: var(--padding);
-    color: var(--text-color);
+	grid-area: aside;
+	overflow: hidden;
+	background: transparent;
+	padding: var(--padding);
+	color: var(--text-color);
 }
 
-aside>div {
-    padding: 30px 10px;
-    position: relative;
-    height: fit-content;
+aside > div {
+	padding: 30px 10px;
+	position: relative;
+	height: fit-content;
 }
 
 .sidebar-section {
-    position: relative;
-    background-color: #fff;
-    border:var(--border);
-    border-radius: var(--round-borders);
-    box-shadow: 0 4px 12px rgba(67, 11, 110, 0.18);
+	position: relative;
+	background-color: #fff;
+	border: var(--border);
+	border-radius: var(--round-borders);
+	box-shadow: 0 4px 12px rgba(67, 11, 110, 0.18);
 }
 
 /* Creating the top image border */
 .sidebar-section::before {
-    content: "";
-    position: absolute;
-    top: -1%;
-    left: 0;
-    width: 100%;
-    height: 25px;
-    background: url('../images/window_frame2.png') no-repeat center;
-    background-size: 100% 100%;
+	content: "";
+	position: absolute;
+	top: -1%;
+	left: 0;
+	width: 100%;
+	height: 25px;
+	background: url("../images/window_frame2.png") no-repeat center;
+	background-size: 100% 100%;
 }
 
 .sidebar-title {
-    font-weight: bold;
-    font-size: 1.2em;
-    font-family: var(--heading-font);
-    color: var(--sidebar-text-color);
-    left: 10%;
+	font-weight: bold;
+	font-size: 1.2em;
+	font-family: var(--heading-font);
+	color: var(--sidebar-text-color);
+	left: 10%;
 }
 
 /* Links and lists inside the white sidebar cards need a color that
@@ -280,34 +281,34 @@ aside>div {
    the colored title band, not the card body. */
 .sidebar-section a,
 .sidebar-section a:visited {
-    color: var(--border-color);
+	color: var(--border-color);
 }
 
 .sidebar-section a:hover,
 .sidebar-section a:focus {
-    color: var(--text-color);
+	color: var(--text-color);
 }
 
-.sidebar-section>.sidebar-title {
-    position: absolute;
-    top: -0.5em;
+.sidebar-section > .sidebar-title {
+	position: absolute;
+	top: -0.5em;
 }
 
 .sidebar-section:not(:last-child) {
-    margin-bottom: 3em;
+	margin-bottom: 3em;
 }
 
 .sidebar-section:first-child {
-    margin-top: 0.0em;
+	margin-top: 0em;
 }
 
 .sidebar-section ul,
 .sidebar-section ol {
-    padding-left: 1.5em;
+	padding-left: 1.5em;
 }
 
-.sidebar-section>*:not(p):not(ul):not(ol):not(blockquote) {
-    margin-top: 10px;
+.sidebar-section > *:not(p):not(ul):not(ol):not(blockquote) {
+	margin-top: 10px;
 }
 
 /* ------------------------------ */
@@ -315,11 +316,11 @@ aside>div {
 /* ------------------------------ */
 
 .right-sidebar {
-    grid-area: rightSidebar;
+	grid-area: rightSidebar;
 }
 
 .left-sidebar {
-    grid-area: leftSidebar;
+	grid-area: leftSidebar;
 }
 
 /* -------------------------------------------------------- */
@@ -327,59 +328,59 @@ aside>div {
 /* -------------------------------------------------------- */
 
 footer {
-    grid-area: footer;
-    border-radius: var(--round-borders);
-    overflow: hidden;
-    font-size: 0.75em;
-    font-weight: bold;
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    color: var(--background-color);
-    font-family: var(--font);
-    text-align: center;
+	grid-area: footer;
+	border-radius: var(--round-borders);
+	overflow: hidden;
+	font-size: 0.75em;
+	font-weight: bold;
+	padding: 15px;
+	display: flex;
+	justify-content: center;
+	color: var(--background-color);
+	font-family: var(--font);
+	text-align: center;
 }
 
-li>a {
-    color: var(--link-color);
+li > a {
+	color: var(--link-color);
 }
 
 details {
-    margin-bottom: 5%;
+	margin-bottom: 5%;
 }
 
 summary {
-    margin-bottom: 2%;
+	margin-bottom: 2%;
 }
 
 a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    transition:
-        background-color 120ms ease,
-        box-shadow 120ms ease,
-        transform 120ms ease;
+	transition:
+		background-color 120ms ease,
+		box-shadow 120ms ease,
+		transform 120ms ease;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 0 rgba(67, 11, 110, 0.22);
+	transform: translateY(-1px);
+	box-shadow: 0 2px 0 rgba(67, 11, 110, 0.22);
 }
 
 button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-    transform: translateY(0);
-    box-shadow: none;
+	transform: translateY(0);
+	box-shadow: none;
 }
 
 button:focus-visible,
@@ -388,77 +389,80 @@ input[type="reset"]:focus-visible,
 input[type="submit"]:focus-visible,
 a[href]:focus-visible,
 [role="button"]:focus-visible {
-    outline: 2px solid var(--border-color);
-    outline-offset: 2px;
+	outline: 2px solid var(--border-color);
+	outline-offset: 2px;
 }
 
+#logout-button:hover {
+	cursor: pointer;
+}
 
 /* -------------------------------------------------------- */
 /*? CONTENT */
 /* -------------------------------------------------------- */
 
 main {
-    line-height: 1.5;
+	line-height: 1.5;
 }
 
 main a,
 main a:visited {
-    color: var(--border-color);
+	color: var(--border-color);
 }
 
 main a:hover,
 main a:focus {
-    color: var(--text-color);
-    text-decoration-style: wavy;
+	color: var(--text-color);
+	text-decoration-style: wavy;
 }
 
 main p,
 main .image,
 main .full-width-image,
 main .two-columns {
-    margin: 0.75em 0;
+	margin: 0.75em 0;
 }
 
 main ol,
 main ul {
-    margin: 0.5em 0;
-    padding-left: 1.5em;
+	margin: 0.5em 0;
+	padding-left: 1.5em;
 }
 
 main ol li,
 main ul li {
-    margin-bottom: 0.2em;
-    line-height: 1.3;
+	margin-bottom: 0.2em;
+	line-height: 1.3;
 }
 
 main ol {
-    padding-left: 2em;
+	padding-left: 2em;
 }
 
 main blockquote {
-    background: rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    margin: 1em 0;
-    border-radius: 10px;
+	background: rgba(0, 0, 0, 0.1);
+	padding: 15px;
+	margin: 1em 0;
+	border-radius: 10px;
 }
 
 main pre {
-    margin: 1em 0 1.5em;
+	margin: 1em 0 1.5em;
 }
 
 main code {
-    text-transform: none;
+	text-transform: none;
 }
 
 main center {
-    margin: 1em 0;
-    padding: 0 1em;
+	margin: 1em 0;
+	padding: 0 1em;
 }
 
 main hr {
-    border: 0;
-    border-top: var(--border);
-    margin: 1.5em 0;
+	border: 0;
+	border-top: var(--border);
+	margin: 1.5em 0;
 }
 
 /* HEADINGS: */
@@ -469,9 +473,9 @@ main h3,
 main h4,
 main h5,
 main h6 {
-    font-family: var(--heading-font);
-    margin-bottom: 0;
-    line-height: 1.5;
+	font-family: var(--heading-font);
+	margin-bottom: 0;
+	line-height: 1.5;
 }
 
 main h1:first-child,
@@ -480,53 +484,51 @@ main h3:first-child,
 main h4:first-child,
 main h5:first-child,
 main h6:first-child {
-    margin-top: 0;
+	margin-top: 0;
 }
 
 main h1 {
-    font-size: 1.5em;
+	font-size: 1.5em;
 }
 
 main h2 {
-    font-size: 1.4em;
+	font-size: 1.4em;
 }
 
 main h3 {
-    font-size: 1.3em;
+	font-size: 1.3em;
 }
 
 main h4 {
-    font-size: 1.2em;
+	font-size: 1.2em;
 }
 
 main h5 {
-    font-size: 1.1em;
+	font-size: 1.1em;
 }
 
 main h6 {
-    font-size: 1em;
+	font-size: 1em;
 }
 
 /* COLUMNS: */
 
 .two-columns {
-    display: flex;
+	display: flex;
 }
 
-.two-columns>* {
-    flex: 1 1 0;
-    margin: 0;
+.two-columns > * {
+	flex: 1 1 0;
+	margin: 0;
 }
 
-.two-columns>*:first-child {
-    padding-right: 0.75em;
+.two-columns > *:first-child {
+	padding-right: 0.75em;
 }
 
-.two-columns>*:last-child {
-    padding-left: 0.75em;
+.two-columns > *:last-child {
+	padding-left: 0.75em;
 }
-
-
 
 /* -------------------------------------------------------- */
 /* ACCESSIBILITY */
@@ -535,23 +537,23 @@ main h6 {
 /* please do not remove this. */
 
 #skip-to-content-link {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: inline-block;
-    padding: 0.375rem 0.75rem;
-    line-height: 1;
-    font-size: 1.25rem;
-    background-color: var(--content-background-color);
-    color: var(--text-color);
-    transform: translateY(-3rem);
-    transition: transform 0.1s ease-in;
-    z-index: 99999999999;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	padding: 0.375rem 0.75rem;
+	line-height: 1;
+	font-size: 1.25rem;
+	background-color: var(--content-background-color);
+	color: var(--text-color);
+	transform: translateY(-3rem);
+	transition: transform 0.1s ease-in;
+	z-index: 99999999999;
 }
 
 #skip-to-content-link:focus,
 #skip-to-content-link:focus-within {
-    transform: translateY(0);
+	transform: translateY(0);
 }
 
 /* -------------------------------------------------------- */
@@ -560,60 +562,60 @@ main h6 {
 
 /* CSS Code for tablets: 801px to 1100px */
 @media (max-width: 1100px) {
-    :root {
-        --sidebar-width: 220px;
-        --padding: 14px;
-    }
+	:root {
+		--sidebar-width: 220px;
+		--padding: 14px;
+	}
 
-    .layout {
-        width: 96%;
-    }
+	.layout {
+		width: 96%;
+	}
 }
 
 /* CSS Code for devices < 800px */
 @media (max-width: 800px) {
-    body {
-        font-size: 13px;
-        padding: calc(var(--margin) / 2);
-    }
+	body {
+		font-size: 13px;
+		padding: calc(var(--margin) / 2);
+	}
 
-    .layout {
-        width: 100%;
-        grid-gap: 20px;
-        grid-template: "header" auto "leftSidebar" auto "main" auto "rightSidebar" auto/1fr;
-        /* Confused by the grid? Check out my tutorial: https://petrapixel.neocities.org/coding/positioning-tutorial#grid */
-    }
+	.layout {
+		width: 100%;
+		grid-gap: 20px;
+		grid-template: "header" auto "leftSidebar" auto "main" auto "rightSidebar" auto/1fr;
+		/* Confused by the grid? Check out my tutorial: https://petrapixel.neocities.org/coding/positioning-tutorial#grid */
+	}
 
-    #sticker {
-        position: static;
-        display: flex;
-        justify-content: center;
-        transform: none;
-        margin: 0 auto 10px;
-    }
+	#sticker {
+		position: static;
+		display: flex;
+		justify-content: center;
+		transform: none;
+		margin: 0 auto 10px;
+	}
 
-    header {
-        flex-direction: column;
-        align-items: center;
-        margin-right: 0;
-    }
+	header {
+		flex-direction: column;
+		align-items: center;
+		margin-right: 0;
+	}
 
-    marquee {
-        display: none;
-    }
+	marquee {
+		display: none;
+	}
 
-    #skip-to-content-link {
-        font-size: 1rem;
-    }
+	#skip-to-content-link {
+		font-size: 1rem;
+	}
 }
 
 /* CSS Code for very small phones: < 400px */
 @media (max-width: 400px) {
-    :root {
-        --padding: 10px;
-    }
+	:root {
+		--padding: 10px;
+	}
 
-    body {
-        font-size: 12px;
-    }
+	body {
+		font-size: 12px;
+	}
 }
