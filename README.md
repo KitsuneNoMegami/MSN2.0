@@ -45,3 +45,7 @@ Nous avons créé deux tables : une pour les channels, l'autre pour les messages
 ## Pistes d'amélioration
 
 - Utiliser un pseudo distinct de l'email pour l'affichage des messages
+
+## Licence
+
+Ce projet est sous licence MIT - voir [LICENSE](LICENSE) pour plus de détails.
