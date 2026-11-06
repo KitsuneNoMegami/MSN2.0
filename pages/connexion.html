@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +19,7 @@
 	<body>
 		<header>
 			<div id="sticker">
-				<img src="../images/title.gif" name="websiteTitle" align="left" />
+				<img src="../images/title.gif" alt="MSN2.0" name="websiteTitle" align="left" />
 			</div>
 		</header>
 		<div class="layout">
@@ -29,8 +29,8 @@
 				<!-- ? Formulaire de connexion : email + mot de passe -->
 				<!-- * L'id "login-form" sert à connexion.js pour écouter l'envoi -->
 				<form id="login-form">
-					<br /><input id="email" type="email" placeholder="example@yahoo.com" /><br />
-					<input id="mdp" type="password" placeholder="mot de passe" /><br />
+					<br/><input id="email" type="email" placeholder="example@yahoo.com" autocomplete="email" required aria-label="Courriel" /><br />
+					<input id="mdp" type="password" placeholder="mot de passe" autocomplete="current-password" required aria-label="Mot de passe" /><br />
 					<!-- * #alert_box : zone où afficher les erreurs de connexion -->
 					<p id="alert_box"></p>
 					<button class="action-button-connexion" type="submit">Me connecter</button><br />
