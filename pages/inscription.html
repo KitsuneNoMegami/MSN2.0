@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +19,7 @@
 	<body>
 		<header>
 			<div id="sticker">
-				<img src="../images/title.gif" name="websiteTitle" />
+				<img src="../images/title.gif" alt="MSN2.0" name="websiteTitle" />
 			</div>
 		</header>
 		<div class="layout">
@@ -28,11 +28,11 @@
 				<h1>Inscription</h1>
 				<!-- ? Formulaire de création de compte -->
 				<form id="signup-form">
-					<br /><input id="email" type="email" placeholder="example@yahoo.com" /> <br />
-					<input id="mdp" type="password" placeholder="mot de passe" />
+					<br /><input id="email" type="email" placeholder="example@yahoo.com" autocomplete="email" required aria-label="Courriel" /> <br />
+					<input id="mdp" type="password" placeholder="mot de passe" autocomplete="new-password" required aria-label="Mot de passe" />
 					<!-- * alert_box : affiche les erreurs de validation du mot de passe -->
 					<p id="alert_box"></p>
-					<input id="confirmmdp" type="password" placeholder="confirmer votre mot de passe" /> <br />
+					<input id="confirmmdp" type="password" placeholder="confirmer votre mot de passe" autocomplete="new-password" required aria-label="Confirmation du mot de passe" /> <br />
 					<button class="action-button-inscription" type="submit">créér mon compte</button><br />
 					<!-- * message de succès après la création du compte-->
 					<p id="created_message"></p>
