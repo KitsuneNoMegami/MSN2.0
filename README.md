@@ -2,6 +2,9 @@
 
 Projet universitaire de messagerie entre utilisateurs, reposant sur une base de données Supabase. Il devait être réalisé en web vanilla (HTML, CSS, JavaScript).
 
+Lien vers le site web : [msn20.vercel.app](msn20.vercel.app)
+
+
 ## Table des matières
 
 1. [Description du projet](#description-du-projet)
