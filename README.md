@@ -17,6 +17,8 @@ Lien vers le site web : [msn20.vercel.app](https://msn20.vercel.app)
 
 Nous sommes partis sur un format rétro, façon MSN : facile à reproduire et assez complet pour le projet. Le sujet demandait d'ajouter une fonctionnalité imaginée par les étudiants. Nous avons choisi un sticker déplaçable, présent sur toutes les pages du site.
 
+![Exemple du site](./images/exemple_du_site.png)
+
 ## Architecture
 
 La page principale (`index`) se trouve à la racine du dépôt. Les autres fichiers sont rangés dans des dossiers dédiés.
